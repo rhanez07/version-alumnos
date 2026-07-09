@@ -1,5 +1,4 @@
-```yaml
-name: 🚀 Deploy Frontend → Firebase Hosting
+name: 🚀 Deploy Frontend -> Firebase Hosting
 
 on:
   push:
@@ -13,7 +12,7 @@ jobs:
     name: Test, Build & Deploy Angular
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout código
+      - name: 🚀 Checkout código
         uses: actions/checkout@v4
 
       - name: ⚙️ Setup Node.js 20
@@ -27,7 +26,7 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: 🧪 Correr unit tests
+      - name: 🛠️ Correr unit tests
         working-directory: frontend
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
@@ -43,4 +42,3 @@ jobs:
           channelId: live
           projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
           entryPoint: ./frontend
-```
